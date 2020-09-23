@@ -1,4 +1,5 @@
 <html>
+<style>
 body {
   background-color: sky blue;
 }
@@ -9,6 +10,7 @@ body {
   p.class {
     margin left: 10px;
   }
+  </style>
 <head>
     <link rel="stylesheet" href="assignment02.css">
   </head>
