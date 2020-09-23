@@ -1,1 +1,16 @@
-
+<html>
+body {
+  background-color: sky blue;
+}
+#igottabeme {
+  .sansserif {
+  font-family: Arial, Helvetica, sans-serif;
+}
+  p.class {
+    margin left: 10px;
+  }
+<head>
+    <link rel="stylesheet" href="assignment02.css">
+  </head>
+</body>
+  </html>
