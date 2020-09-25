@@ -10,6 +10,11 @@ body {
   p.class {
     margin left: 10px;
   }
+div {
+ margin-bottom: 50px;
+}
+span {
+ width: 100px;
 <head>
     <link rel="stylesheet" href="assignment02.css">
   </head>
