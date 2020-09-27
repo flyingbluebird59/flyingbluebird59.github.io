@@ -27,6 +27,15 @@ span {
 span {
  background-color: yellow;
 }
+span.a {
+ display: inline;
+}
+span.b {
+ display: block;
+}
+span.c {
+ display: inline-block;
+}
 
   </head>
  </style>
