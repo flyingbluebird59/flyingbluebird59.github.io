@@ -1,5 +1,6 @@
-<html>
-body {
+ <head>
+ <style>
+ body {
  background-color: sky blue;
 }
 #igottabeme {
@@ -15,8 +16,17 @@ div {
 }
 span {
  width: 100px;
-<head>
-    <link rel="stylesheet" href="assignment02.css">
+ padding: 5px 20px;
+}
+ span.solid{
+  border-style: solid;
+  border-color: blue;
+  border-width: 5px;
+ }
+span {
+ background-color: yellow;
+}
+
   </head>
+ </style>
 </body>
-  </html>
