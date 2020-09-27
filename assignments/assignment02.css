@@ -36,7 +36,13 @@ span.b {
 span.c {
  display: inline-block;
 }
-
+nav {
+ position: sticky;
+ background-color: green;
+ opacity: 0.9;
+ padding: 5px;
+ font-size: 20px;
+}
   </style>
  </head>
 </body>
