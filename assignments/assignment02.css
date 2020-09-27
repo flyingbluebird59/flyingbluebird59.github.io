@@ -18,15 +18,13 @@ div {
 span {
  width: 100px;
  padding: 5px 20px;
+ background-color: yellow;
 }
  span.solid{
   border-style: solid;
   border-color: blue;
   border-width: 5px;
  }
-span {
- background-color: yellow;
-}
 span.a {
  display: inline;
 }
