@@ -5,8 +5,8 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-  p.class {
-    margin left: 10px;
+  p.classy {
+    margin-left: 10px;
   }
 div {
  margin-bottom: 50px;
@@ -20,13 +20,13 @@ span {
  background-color: yellow;
 }
  
-.a {
+span.a {
  display: inline;
 }
-.b {
+span.b {
  display: block;
 }
-.c {
+span.c {
  display: inline-block;
 }
 nav {
