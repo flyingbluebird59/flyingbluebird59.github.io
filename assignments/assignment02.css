@@ -20,13 +20,13 @@ span {
  background-color: yellow;
 }
  
-span.a {
+.a {
  display: inline;
 }
-span.b {
+.b {
  display: block;
 }
-span.c {
+.c {
  display: inline-block;
 }
 nav {
