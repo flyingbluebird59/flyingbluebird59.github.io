@@ -29,9 +29,8 @@ span.b {
 span.c {
  display: inline-block;
 }
-img [alt = "cat icon"] {
+img[alt="cat icon”] {
  position: fixed;
- z-index: -1;
 }
 nav {
  position: sticky;
