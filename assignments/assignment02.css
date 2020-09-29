@@ -35,6 +35,7 @@ img alt="cat icon" {
 nav {
  position: sticky;
  background-color: green;
+ top: 0;
  opacity: 0.9;
  padding: 5px;
  font-size: 20px;
