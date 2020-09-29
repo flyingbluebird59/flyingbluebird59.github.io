@@ -29,10 +29,13 @@ span.b {
 span.c {
  display: inline-block;
 }
-img alt="cat icon" {
+img https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Creative-Tail-Animal-cat.svg/128px-Creative-Tail-Animal-cat.svg.png {
  position: fixed;
+ z-index: -1;
 }
+
 nav {
+ position: -webkit-sticky;
  position: sticky;
  background-color: green;
  top: 0;
