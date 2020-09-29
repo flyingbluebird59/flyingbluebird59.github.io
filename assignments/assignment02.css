@@ -29,7 +29,7 @@ span.b {
 span.c {
  display: inline-block;
 }
-img[alt="cat icon”] {
+img alt="cat icon" {
  position: fixed;
 }
 nav {
