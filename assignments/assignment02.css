@@ -29,11 +29,19 @@ span.b {
 span.c {
  display: inline-block;
 }
-img https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Creative-Tail-Animal-cat.svg/128px-Creative-Tail-Animal-cat.svg.png {
- position: fixed;
- z-index: -1;
-}
 
+ tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+td:hover {
+ background-color: yellow;
+}
+td {
+ text-align: right;
+}
+input[type=text] {
+ background-color: pink;
+}
 nav {
  position: -webkit-sticky;
  position: sticky;
