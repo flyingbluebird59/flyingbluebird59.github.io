@@ -163,12 +163,18 @@ elem[1].children[4].children[0].onclick = function(){add1(elem[1]);};
 // create an "add1" function
 function add1 (elem) {
   if(elem.children[2].innerHTML == "-") 
-    elem.children[2].innerHTML = "";
+    elem.children[2].innerHTML = "1";
   else {
     let currentScore = elem.children[].innerHTML;
     currentScore = Number.parseInt(currentScore);
     elem.children[2].innerHTML = currentScore + 1;
   }
+ if(elem.children[3].innerHTML == "-") 
+    elem.children[3].innerHTML = "2";
+  else {
+    let currentScore = elem.children[].innerHTML;
+    currentScore = Number.parseInt(currentScore);
+    elem.children[3].innerHTML = currentScore + 1; 
 }
   </script>
 </html>
