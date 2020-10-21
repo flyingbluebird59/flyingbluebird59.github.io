@@ -163,8 +163,8 @@ elem[1].children[4].children[0].onclick = function(){add1(elem[1]);};
 // create an "add1" function
     //change code so that 1 can be added to the score of every hole
     //change code so that 1 will be subtracted from the score of every hole
+    //change code so that the column over shows diference between par and score
 function add1 (elem) {
-  elem[1].children[4].children[0].onclick = function(){add1(elem[1]);};
   if(elem.children[2].innerHTML == "-") 
     elem.children[2].innerHTML = "1";
   else {
