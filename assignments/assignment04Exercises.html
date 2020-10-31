@@ -88,12 +88,13 @@ let person = {
   fullName: function() {return this.firstName  + " " + person.lastName}
 }
 document.getElementById("1A").innerHTML = person.fullName();
-
+	</script>
 // Instructions
 // modify person object, above, as follows
 // add properties, streetAddress, city, state, zipCode
 // add method, fullAddress(), which prints full address on a single line.
 // Display output of fullAddress() in <div id="1B">
+	<script>
 person.streetAddress = "123 Main Street";
 person.city = "Denver";
 person.state = "Colorado";
@@ -102,12 +103,13 @@ person.zipCode = "80014";
     //person.streetAddress, + person.city, + person.state, + person.zipCode
     fullAddress : function() {
     return this.streetAddress + " " + this.city + " " + this.state + " " + this.zipCode;
-  };
+  }
 	  document.getElementById("1B").innerHTML = person.fullAddress();
-
+	</script>
 // ==================
 
 // 7. create basic DOM object
+	<script>
 let div2a = document.getElementById("2A");
 let table2a = createTable("table2a");
 div2a.appendChild(table2a);
@@ -116,13 +118,13 @@ table2a.setAttribute("width", "100%")
 appendTableRow3(table2a,"1","2","3");
 appendTableRow3(table2a,"4","5","6");
 appendTableRow3(table2a,"7","8","9");
-
+	</script>
 // Instructions
 // add a new function, appendTableRow5(), which adds 5-column rows instead of 3-column rows
 // create a 5-row by 5-column table showing the numbers, 1 through 25
 // put borders around the cells, too, not just around the edge of the table
 // Display output in <div id="2B">
-	  
+	  <script>
 	   function appendTableRow5 (tableobj, col1, col2, col3, col4, col5) {
 let td1 = document.createElement("td");
 let td2 = document.createElement("td");
@@ -156,7 +158,7 @@ appendTableRow5(table2b,"11","12","13","14","15");
 appendTableRow5(table2b,"16","17","18","19","20");
 appendTableRow5(table2b,"21,"22","23","24","25");
 
-	  
+	</script>
 	  
 	 
 // ==================
@@ -169,7 +171,7 @@ appendTableRow5(table2b,"21,"22","23","24","25");
 // in table3B, add a column, "Price * Qty", and use JS to compute the correct values to put in the column
 // add to table03B a "totals" row which gives the "grand total" of all numbers in the "Price * Qty" column
 
-		
+		<script>
 		<div id = "3B">
 		<table border = "1" width = "100%" id = "table03B" class = "table table-striped">
 		<tbody>
@@ -179,11 +181,12 @@ appendTableRow5(table2b,"21,"22","23","24","25");
                  <tr> <td>Doohickey</td><td>3.00</td><td>3</td><td>9.00</td> </tr>
 		</tbody>
 		</table> </div>
-		
+	</script>
 // 9. Revise a non-object-oriented HTML form. Make it so the field in focus displays *only* its own error (not the errors of all the other fields), however, if the user clicks the "validate" button, then display all errors.
 // code below is from: https://www.guru99.com/practical-code-examples-using-javascript.html 
 
     // initialize error div id array
+	<script>
     var divs = new Array();
     divs[0] = "errFirst";
     divs[1] = "errLast";
@@ -249,11 +252,12 @@ appendTableRow5(table2b,"21,"22","23","24","25");
             document.getElementById("errFinal").innerHTML 
               = "All the data you entered is correct!!!";
     }
-
+	</script>
 
 // 10. Create a more object-oriented form
 
-// Step 1. Create/append the DOM object 
+// Step 1. Create/append the DOM object
+	<script>
 let form00 = document.getElementById("form00");
 let table00 = createTable("table00");
 form00.appendChild(table00);
@@ -306,6 +310,6 @@ function createTable(id) {
   table.appendChild(tbody);
   return table;
 }
-</script>
+	</script>
   </body>
     </html>
