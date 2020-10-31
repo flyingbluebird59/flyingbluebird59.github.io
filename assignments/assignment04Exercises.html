@@ -94,19 +94,15 @@ document.getElementById("1A").innerHTML = person.fullName();
 // add properties, streetAddress, city, state, zipCode
 // add method, fullAddress(), which prints full address on a single line.
 // Display output of fullAddress() in <div id="1B">
-let person = {
-	firstName: "Jane",
-	lastName: "Doe",
-	age: 45,
-	streetAddress: "123 Main Street",
-	city: "Denver",
-	state: "Colorado",
-	zipCode: 14008,
+person.streetAddress = "123 Main Street";
+person.city = "Denver";
+person.state = "Colorado";
+person.zipCode = "80014";
     // Method for full address
     //person.streetAddress, + person.city, + person.state, + person.zipCode
     fullAddress : function() {
-    return this.streetAddress + " " + this.city + " " + this.state + " " + this.zipCode}
-  }
+    return this.streetAddress + " " + this.city + " " + this.state + " " + this.zipCode;
+  };
 	  document.getElementById("1B").innerHTML = person.fullAddress();
 
 // ==================
@@ -310,5 +306,6 @@ function createTable(id) {
   table.appendChild(tbody);
   return table;
 }
+</script>
   </body>
     </html>
