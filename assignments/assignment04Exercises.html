@@ -89,7 +89,7 @@ let person = {
   fullName: function() {
 	  return this.firstName  + " " + person.lastName;
   }
-};
+}
 document.getElementById("1A").innerHTML = person.fullName();
 	
 // Instructions
@@ -104,10 +104,10 @@ person.state = "Colorado";
 person.zipCode = "80014";
     // Method for full address
     //person.streetAddress, + person.city, + person.state, + person.zipCode
-    fullAddress : function() {
-    return this.streetAddress + " " + this.city + " " + this.state + " " + this.zipCode;
+    fullAddress : function home() {
+    return person.streetAddress + " " + person.city + " " + person.state + " " + person.zipCode;
   }
-	  document.getElementById("1B").innerHTML = person.fullAddress();
+	  document.getElementById("1B").innerHTML = this.home();
 	
 // ==================
 
