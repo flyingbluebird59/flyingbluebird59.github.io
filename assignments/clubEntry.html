@@ -52,6 +52,10 @@
 	
 	function addClub() {
         // your code here
+	// append another club at the end
+	clubs[clubs.length] = clubs[clubs.length - 1];
+	localStorage.setItem("club", c);
+	JSON.stringify(clubs);
 	}
 	
 	// navigate to club distance LIST screen
