@@ -41,7 +41,10 @@ function loadClubDistances() {
 	}
 	return clubs;
 }
-
+// display message
+function myFunction() {
+  alert("Warning: you are only allowed to carry 14 clubs in your golf bag in match play competition");
+}
 // append one row to HTML table for each row in "clubs" array
 function appendTableRows() {
 	// select the HTML table <tbody> element
