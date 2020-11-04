@@ -93,10 +93,13 @@ function displayClubDistanceEntryForm(c) {
 }
 
 // replace the current "clubs" array with the previous one
+currentData;
+priorData;
+
 function undoLastShot() {
         // your code here !
 		// use generation method
-		
+		currentData=priorData;
 }
 
 // create a new (default) "clubs" array
