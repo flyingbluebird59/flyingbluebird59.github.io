@@ -99,7 +99,8 @@ var priorData;
 function undoLastShot() {
         // your code here !
 		// use generation method
-		currentData = priorData;
+	
+		priorData = currentData;
 }
 
 // create a new (default) "clubs" array
