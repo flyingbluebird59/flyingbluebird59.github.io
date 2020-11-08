@@ -88,7 +88,7 @@ var chartData = {
 
 // code below modified from: 
 // https://www.w3schools.com/js/js_ajax_intro.asp
-
+	
 function loadContent() {
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -108,7 +108,7 @@ function loadContent() {
           });
         }
       }
-
+	    
       chartData.data.datasets[0].backgroundColor 
         = "rgba(100,100,100,0.4)"; // gray
       chartData.data.datasets[1].backgroundColor 
@@ -133,7 +133,7 @@ function loadContent() {
     } // end if
     
   }; // end xhttp.onreadystatechange = function()
-  
+  let url = "https://api.covid19api.com/summary";
   xhttp.open("GET", URL, true);
   xhttp.send();
   
