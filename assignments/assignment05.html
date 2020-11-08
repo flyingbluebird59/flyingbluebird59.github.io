@@ -90,7 +90,7 @@ var chartData = {
 // https://www.w3schools.com/js/js_ajax_intro.asp
 	
 function loadContent() {
-  xhttp = new XMLHttpRequest();
+ xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 
         && this.status == 200) {
@@ -133,7 +133,7 @@ function loadContent() {
     } // end if
     
   }; // end xhttp.onreadystatechange = function()
-  let url = "https://api.covid19api.com/summary";
+let url = "https://api.covid19api.com/summary";
   xhttp.open("GET", URL, true);
   xhttp.send();
   
