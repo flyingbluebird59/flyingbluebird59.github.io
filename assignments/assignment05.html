@@ -94,7 +94,7 @@ function loadContent() {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 
         && this.status == 200) {
-      document.getElementById("demo").innerHTML = this.responseText;
+      document.getElementById("myChart").innerHTML = this.responseText;
       covidJson = this.responseText;
       covidJsObj = JSON.parse(covidJson);
       newConfirmedOver1000 = [];
