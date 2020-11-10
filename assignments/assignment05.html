@@ -94,7 +94,6 @@ function loadContent() {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 
         && this.status == 200) {
-      document.getElementById("URL").innerHTML = this.responseText;
       covidJson = this.responseText;
       covidJsObj = JSON.parse(covidJson);
       newConfirmedOver1000 = [];
@@ -128,7 +127,7 @@ function loadContent() {
       chartData.options.title.text 
         = "Covid 19 Hotspots (" + 
         dayjs().format("YYYY-MM-DD") + ")" ;
-      myChart = new Chart(ctx, chartData); 
+      myChart = new Chart(URL, chartData); 
 
     } // end if
     
