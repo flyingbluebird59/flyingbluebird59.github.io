@@ -1,6 +1,4 @@
-<DOC type HTML>
-  <html lang = "en">
-    <h2>Example Chart using Chart.js</h2>
+<h2>Example Chart using Chart.js</h2>
 <canvas id="myChart"></canvas>
 
 <h2>Example AJAX call to Covid19api</h2>
@@ -16,7 +14,16 @@
 <!-- Day.js: https://day.js.org/docs/en/installation/browser -->
 <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 <script>
-	// Covid19api variables
+  dayjs().format();
+  console.log(dayjs().format("YYYY-MM-DD"));
+
+</script>
+<script>
+// ---------- Global variables ----------
+
+// use "var" keyword so code works in CodePen
+
+// Covid19api variables
 var URL = "https://api.covid19api.com/summary";
 var covidJson;
 var covidJsObj;
@@ -83,29 +90,32 @@ var chartData = {
 
 // code below modified from: 
 // https://www.w3schools.com/js/js_ajax_intro.asp
-	
+
 function loadContent() {
   xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 
         && this.status == 200) {
+      
       covidJson = this.responseText;
       covidJsObj = JSON.parse(covidJson);
       newConfirmedOver1000 = [];
-      
+      //change 1000 to 3000 and c.NewConfirmed to c.TotalDeaths
 	    for (let c of covidJsObj.Countries) {
         if (c.NewConfirmed > 10000) {
           newConfirmedOver1000.push({ 
             "Slug": c.Slug, 
             "NewConfirmed": c.NewConfirmed, 
-            "NewDeaths": c.NewDeaths
+            "NewDeaths": c.NewDeaths,
+			"TotalConfirmed": c.TotalConfirmed,
+			"TotalDeaths": c.TotalDeaths,
+            "Populations" : populations[c.Slug],
+			"TotalConfirmedPer100000": 100000 * c.TotalConfirmed/populations[c.Slug]
           });
         }
       }
-  dayjs().format();
-  dayjs("2020-11-06").format("YYYY-MM-DD");
-	<script>
-chartData.data.datasets[0].backgroundColor 
+
+      chartData.data.datasets[0].backgroundColor 
         = "rgba(100,100,100,0.4)"; // gray
       chartData.data.datasets[1].backgroundColor 
         = "rgba(255,0,0,0.4)"; // red
@@ -124,105 +134,16 @@ chartData.data.datasets[0].backgroundColor
       chartData.options.title.text 
         = "Covid 19 Hotspots (" + 
         dayjs().format("YYYY-MM-DD") + ")" ;
-       myChart = new Chart(ctx, chartData); 
+      myChart = new Chart(ctx, chartData); 
 
     } // end if
     
   }; // end xhttp.onreadystatechange = function()
+  
   xhttp.open("GET", URL, true);
   xhttp.send();
   
 } // end function loadContent() 
-	
-</script>
-    <script>
-   // Covid19api variables
-var URL = "https://api.covid19api.com/summary";
-var covidJson;
-var covidJsObj;
-var newConfirmedOver1000;
-
-// AJAX variable
-var xhttp;
-
-// Chart.js variables
-
-// modified from : https://www.sitepoint.com/introduction-chart-js-2-0-six-examples/
-// "ctx" is the canvas HTML element where the chart is rendered in the browser
-var ctx = 
-  document.getElementById('myChart').getContext('2d');
-// "chartData" includes the graph AND the formatting, including title, legend, axes, etc.
-var chartData = {
-  type: 'bar',
-  data: {
-    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-    datasets: [{
-      label: 'apples',
-      data: [12, 19, 3, 17, 6, 3, 7],
-      backgroundColor: "rgba(255,0,0,0.4)"
-    }, {
-      label: 'oranges',
-      data: [2, 29, 5, 5, 2, 3, 10],
-      backgroundColor: "rgba(255,140,0,0.4)"
-    }]
-  },
-  options: {
-    title: {
-      display: true,
-      text: 'Apples and Oranges'
-    },
-    scales: {
-      yAxes: [{
-        ticks: {
-          // logarithmic scale ignores maxTicksLimit
-          maxTicksLimit: 11,
-          callback: function(label, index, labels) {
-            return (   label/1000 > 9 
-                    || label/1000 == 1 
-                    || label/1000 == 0.1 
-                    || label/1000 == 0.01) 
-              ? label/1000+'k' :  "";
-          }
-        },
-        scaleLabel: {
-          display: true,
-          labelString: '1k = 1000'
-        },
-        // logarithmic scale ignores maxTicksLimit
-        type: "logarithmic"
-      }]
-    }
-  }
-};
-// var myChart = new Chart(ctx, chartData); 
-
-// ---------- loadContent() function ----------
-
-// Note: you can't execute API data dependent code outside the loadContent() function because the code might execute before the AJAX call responds, that is, it might execute before the variable, covidJson, is initialized with data from the API. Example below.
-// console.log(covidJson.Global.NewConfirmed); // error 
-
-// code below modified from: 
-// https://www.w3schools.com/js/js_ajax_intro.asp
-	
-function loadContent() {
-  xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 
-        && this.status == 200) {
-      covidJson = this.responseText;
-      covidJsObj = JSON.parse(covidJson);
-      newConfirmedOver1000 = [];
-      
-	    for (let c of covidJsObj.Countries) {
-        if (c.NewConfirmed > 10000) {
-          newConfirmedOver1000.push({ 
-            "Slug": c.Slug, 
-            "NewConfirmed": c.NewConfirmed, 
-            "NewDeaths": c.NewDeaths
-          });
-        }
-      }
-
 // data from: https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population
 var populations = {
   'china' : 1405137440,
@@ -326,4 +247,4 @@ var populations = {
 'austria' : 8915382,
 'switzerland' : 8632703,
 }
-    </script>
+</script>
