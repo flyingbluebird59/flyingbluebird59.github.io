@@ -11,9 +11,7 @@
 <!-- Lodash: https://lodash.com/ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
 <script>
-	//lodash
-//TotalConfirmedPer100000 =._orderBy(TotalConfirmedPer100000, "populations", "desc");
-//<script>
+
 <!-- Day.js: https://day.js.org/docs/en/installation/browser -->
 <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 <script>
@@ -123,7 +121,7 @@ function loadContent() {
       chartData.data.datasets[1].backgroundColor 
         = "rgba(255,0,0,0.4)"; // red
 	    //chartData.data.datasets[2].backgroundColor 
-        //= "rgba(25,206,45,0.7)"; // green
+        = "rgba(25,173,45,0.7)"; // light green
 	    chartData.data.datasets[3].backgroundColor 
         = "rgba(129,50,188,0.5)"; // purple
 	    chartData.data.datasets[4].backgroundColor 
@@ -262,4 +260,6 @@ var populations = {
 'austria' : 8915382,
 'switzerland' : 8632703,
 }
+//lodash
+TotalConfirmedPer100000 = ._orderBy(TotalConfirmedPer100000, "populations", "desc");
 </script>
