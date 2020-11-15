@@ -10,7 +10,6 @@
 
 <!-- Lodash: https://lodash.com/ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
-<script>
 
 <!-- Day.js: https://day.js.org/docs/en/installation/browser -->
 <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
@@ -116,6 +115,10 @@ function loadContent() {
           });
         }
       }
+	    newConfirmedOver1000 = _.orderBy(newConfirmedOver1000, "NewDeaths", "desc");
+
+	    //lodash
+TotalConfirmedPer100000 = ._orderBy(TotalConfirmedPer100000, "populations", "desc");
 
       chartData.data.datasets[0].backgroundColor 
         = "rgba(100,100,100,0.4)"; // gray
@@ -262,5 +265,4 @@ var populations = {
 'switzerland' : 8632703,
 }
 //lodash
-TotalConfirmedPer100000 = ._orderBy(TotalConfirmedPer100000, "populations", "desc");
 </script>
