@@ -129,7 +129,7 @@ TotalConfirmedPer100000 = _.orderBy("TotalConfirmedPer100000", populations, "des
         = 'new cases';
       chartData.data.datasets[1].label  
         = 'new deaths';
-	    chartData.data.datasets[2].label = 'total confirmed per 100000';
+	    chartData.data.datasets[2].label = 'TotalConfirmedPer100000';
 	  chartData.data.labels  
         = newConfirmedOver1000.map( (x) => x.Slug );
       chartData.data.datasets[0].data  
