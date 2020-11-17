@@ -139,7 +139,7 @@ TotalConfirmedPer100000 = _.orderBy("TotalConfirmedPer100000", populations, "des
         = newConfirmedOver1000.map( (x) => x.Slug );
       chartData.data.datasets[0].data  
         = newConfirmedOver1000.map( 
-          (x) => x.NewCases );
+          (x) => x.NewConfirmed );
       chartData.data.datasets[1].data  
         = newConfirmedOver1000.map( 
           (x) => x.NewDeaths );
