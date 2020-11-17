@@ -105,7 +105,7 @@ function loadContent() {
       newConfirmedOver1000 = [];
       //change 1000 to 3000 and c.NewConfirmed to c.TotalDeaths
 	    for (let c of covidJsObj.Countries) {
-        if (c.TotalDeaths > 30000) {
+        if (c.TotalDeaths > 3000) {
           newConfirmedOver1000.push({ 
             "Slug": c.Slug, 
             "NewConfirmed": c.TotalDeaths, 
@@ -129,6 +129,7 @@ _.orderBy("TotalConfirmedPer100000", populations, "desc");
         = 'new cases';
       chartData.data.datasets[1].label  
         = 'new deaths';
+	  chartData.data.labels  
         = newConfirmedOver1000.map( (x) => x.Slug );
       chartData.data.datasets[0].data  
         = newConfirmedOver1000.map( 
