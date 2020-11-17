@@ -129,9 +129,6 @@ _.orderBy("TotalConfirmedPer100000", populations, "desc");
         = 'new cases';
       chartData.data.datasets[1].label  
         = 'new deaths';
-	    chartData.data.datasets[2].label = 'TotalConfirmed';
-	    chartData.data.datasets[3].label = 'TotalDeaths';
-	    chartData.data.datasets[4].label = 'TotalConfirmedPer100000';
       chartData.data.labels  
         = newConfirmedOver1000.map( (x) => x.Slug );
       chartData.data.datasets[0].data  
@@ -140,9 +137,6 @@ _.orderBy("TotalConfirmedPer100000", populations, "desc");
       chartData.data.datasets[1].data  
         = newConfirmedOver1000.map( 
           (x) => x.NewDeaths );
-	    chartData.data.datasets[2].data = TotalConfirmed.map((x) => x.TotalConfirmed);
-	    chartData.data.datasets[3].data = TotalDeaths.map((x) => x.TotalDeaths);
-	    chartData.data.datasets[4].data = TotalConfirmedPer100000.map((x) => x.TotalConfirmedPer100000);
       chartData.options.title.text 
         = "Covid 19 Hotspots (" + 
         dayjs().format("YYYY-MM-DD") + ")" ;
