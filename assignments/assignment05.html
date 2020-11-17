@@ -139,10 +139,11 @@ TotalConfirmedPer100000 = _.orderBy("TotalConfirmedPer100000", populations, "des
         = newConfirmedOver1000.map( (x) => x.Slug );
       chartData.data.datasets[0].data  
         = newConfirmedOver1000.map( 
-          (x) => x.NewConfirmed );
+          (x) => x.NewCases );
       chartData.data.datasets[1].data  
         = newConfirmedOver1000.map( 
           (x) => x.NewDeaths );
+	    chartData.data.datasets[2].data = TotalConfirmedPer100000.map((x) => x.TotalConfirmedPer100000 );
       chartData.options.title.text 
         = "Covid 19 Hotspots (" + 
         dayjs().format("YYYY-MM-DD") + ")" ;
