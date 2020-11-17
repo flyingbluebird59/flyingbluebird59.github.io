@@ -118,7 +118,7 @@ function loadContent() {
         }
       }
     //lodash
-TotalConfirmedPer100000 =  _.orderBy(TotalConfirmedPer100000, "populations", "desc");
+  _.orderBy(TotalConfirmedPer100000, populations, "desc");
 
       chartData.data.datasets[0].backgroundColor 
         = "rgba(100,100,100,0.4)"; // gray
@@ -264,5 +264,4 @@ var populations = {
 'austria' : 8915382,
 'switzerland' : 8632703,
 }
-//lodash
 </script>
