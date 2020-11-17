@@ -121,11 +121,10 @@ function loadContent() {
 			"TotalConfirmedPer100000": 100000 * c.TotalConfirmed/populations[c.Slug]
           });
         }
-      }
-     
-	    //lodash
+		    //lodash
 TotalConfirmedPer100000 = _.orderBy("TotalConfirmedPer100000", populations, "desc");
-	    
+      }
+         
       chartData.data.datasets[0].backgroundColor 
         = "rgba(100,100,100,0.4)"; // gray
       chartData.data.datasets[1].backgroundColor 
