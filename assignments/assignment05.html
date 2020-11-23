@@ -140,7 +140,7 @@ newConfirmedOver1000 = _.orderBy(newConfirmedOver1000, "TotalConfirmedPer100000"
       chartData.data.datasets[0].label  
         = 'new cases';
       chartData.data.datasets[1].label  
-        = 'new deaths';
+        = 'total deaths';
 	    chartData.data.datasets[2].label = 'TotalConfirmedPer100000';
 	  chartData.data.labels  
         = newConfirmedOver1000.map( (x) => x.Slug );
