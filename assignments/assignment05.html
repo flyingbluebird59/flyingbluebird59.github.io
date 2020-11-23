@@ -159,7 +159,7 @@ newConfirmedOver1000 = _.orderBy(newConfirmedOver1000, "TotalConfirmedPer100000"
     } // end if
     
   }; // end xhttp.onreadystatechange = function()
-  
+  let url = "https://api.covid19api.com/summary";
   xhttp.open("GET", URL, true);
   xhttp.send();
   
