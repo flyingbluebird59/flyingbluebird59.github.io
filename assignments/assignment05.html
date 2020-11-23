@@ -118,7 +118,7 @@ function loadContent() {
 	    
       //change 1000 to 3000 and c.NewConfirmed to c.TotalDeaths
 	    for (let c of covidJsObj.Countries) {
-        if (c.TotalDeaths > 50000) {
+        if (c.TotalDeaths >= 50000) {
           newConfirmedOver1000.push({ 
             "Slug": c.Slug, 
             "NewConfirmed": c.NewConfirmed, 
