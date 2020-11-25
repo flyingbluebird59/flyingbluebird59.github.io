@@ -17,7 +17,7 @@
 
 	</head>
 
-	<body onload="loadDoc();">
+	<body onload="">
 
 		<div class="container">
 
@@ -116,7 +116,8 @@
   crossorigin="anonymous"></script>
     <script>
       // --- global variables ---
-
+//first year of year end balence = loan amount * 1 + year end balence
+	    //second year and onwards of year end balence = loan amount * 1 + previous year end balence
 var loans = [
   { loan_year: 2020, loan_amount: 10000.00, loan_int_rate: 0.0453 },
   { loan_year: 2021, loan_amount: 10000.00, loan_int_rate: 0.0453 },
@@ -127,7 +128,9 @@ var loans = [
 
 // --- function: loadDoc() ---
 
-function loadDoc() {
+//function loadDoc() {
+	    $(document).ready(function(){
+
   
   // pre-fill defaults for first loan year
   var defaultYear = loans[0].loan_year;
@@ -140,18 +143,19 @@ function loadDoc() {
   document.getElementById("loan_bal0" + 1).innerHTML = toComma(loanWithInterest.toFixed(2));
   
   // pre-fill defaults for other loan years
+		    //change document.getElementById to $("#")
   for(var i=2; i<6; i++) {
-    document.getElementById("loan_year0" + i).value = defaultYear++;
-    document.getElementById("loan_year0" + i).disabled = true;
-    document.getElementById("loan_year0" + i).style.backgroundColor = "gray";
-    document.getElementById("loan_year0" + i).style.color = "white";
-    document.getElementById("loan_amt0" + i).value = defaultLoanAmount.toFixed(2);
-    document.getElementById("loan_int0" + i).value = defaultInterestRate;
-    document.getElementById("loan_int0" + i).disabled = true;
-    document.getElementById("loan_int0" + i).style.backgroundColor = "gray";
-    document.getElementById("loan_int0" + i).style.color = "white";
+    $("#loan_year0" + i).value = defaultYear++;
+    $("#loan_year0" + i).disabled = true;
+    $("#loan_year0" + i).style.backgroundColor = "gray";
+    $("#loan_year0" + i).style.color = "white";
+    $("#loan_amt0" + i).value = defaultLoanAmount.toFixed(2);
+    $("#loan_int0" + i).value = defaultInterestRate;
+    $("#loan_int0" + i).disabled = true;
+    $("#loan_int0" + i).style.backgroundColor = "gray";
+    $("#loan_int0" + i).style.color = "white";
    loanWithInterest = (loanWithInterest + defaultLoanAmount) * (1 + defaultInterestRate);
-   document.getElementById("loan_bal0" + i).innerHTML = toComma(loanWithInterest.toFixed(2));
+   $("#loan_bal0" + i).innerHTML = toComma(loanWithInterest.toFixed(2));
     } // end: "for" loop
   
   // all input fields: select contents on fucus
@@ -169,8 +173,8 @@ function loadDoc() {
     updateLoansArray();
   });
   
-} // end: function loadDoc()
-
+//} // end: function loadDoc()
+	    });
 
 function toComma(value) {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
