@@ -157,7 +157,9 @@ var loans = [
    loanWithInterest = (loanWithInterest + defaultLoanAmount) * (1 + defaultInterestRate);
    $("#loan_bal0" + i).innerHTML = toComma(loanWithInterest.toFixed(2));
     } // end: "for" loop
-  
+		    
+  //Amount column
+		    
   // all input fields: select contents on fucus
   $("input[type=text]").focus(function() {
     $(this).select();
