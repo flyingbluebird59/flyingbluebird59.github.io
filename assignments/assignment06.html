@@ -160,6 +160,62 @@ var loans = [
    $("#loan_bal0" + i).innerHTML = toComma(loanWithInterest.toFixed(2));
     } // end: "for" loop
 		    
+	for(var i=2; i<6; i++) {
+    $("#loan_year1" + i).value = defaultYear++;
+    $("#loan_year1" + i).disabled = true;
+    $("#loan_year1" + i).style.backgroundColor = "gray";
+    $("#loan_year1" + i).style.color = "white";
+    $("#loan_amt1" + i).value = defaultLoanAmount.toFixed(2);
+    $("#loan_int1" + i).value = defaultInterestRate;
+    $("#loan_int1" + i).disabled = true;
+    $("#loan_int1" + i).style.backgroundColor = "gray";
+    $("#loan_int1" + i).style.color = "white";
+   loanWithInterest = (loanWithInterest + defaultLoanAmount) * (1 + defaultInterestRate);
+   $("#loan_bal1" + i).innerHTML = toComma(loanWithInterest.toFixed(2));
+    } // end: "for" loop
+		    
+		    for(var i=2; i<6; i++) {
+    $("#loan_year2" + i).value = defaultYear++;
+    $("#loan_year2" + i).disabled = true;
+    $("#loan_year2" + i).style.backgroundColor = "gray";
+    $("#loan_year2" + i).style.color = "white";
+    $("#loan_amt2" + i).value = defaultLoanAmount.toFixed(2);
+    $("#loan_int2" + i).value = defaultInterestRate;
+    $("#loan_int2" + i).disabled = true;
+    $("#loan_int2" + i).style.backgroundColor = "gray";
+    $("#loan_int2" + i).style.color = "white";
+   loanWithInterest = (loanWithInterest + defaultLoanAmount) * (1 + defaultInterestRate);
+   $("#loan_bal2" + i).innerHTML = toComma(loanWithInterest.toFixed(2));
+    } // end: "for" loop
+		    
+		    for(var i=2; i<6; i++) {
+    $("#loan_year3" + i).value = defaultYear++;
+    $("#loan_year3" + i).disabled = true;
+    $("#loan_year3" + i).style.backgroundColor = "gray";
+    $("#loan_year3" + i).style.color = "white";
+    $("#loan_amt3" + i).value = defaultLoanAmount.toFixed(2);
+    $("#loan_int3" + i).value = defaultInterestRate;
+    $("#loan_int3" + i).disabled = true;
+    $("#loan_int3" + i).style.backgroundColor = "gray";
+    $("#loan_int3" + i).style.color = "white";
+   loanWithInterest = (loanWithInterest + defaultLoanAmount) * (1 + defaultInterestRate);
+   $("#loan_bal3" + i).innerHTML = toComma(loanWithInterest.toFixed(2));
+    } // end: "for" loop
+		    
+		    for(var i=2; i<6; i++) {
+    $("#loan_year4" + i).value = defaultYear++;
+    $("#loan_year4" + i).disabled = true;
+    $("#loan_year4" + i).style.backgroundColor = "gray";
+    $("#loan_year4" + i).style.color = "white";
+    $("#loan_amt4" + i).value = defaultLoanAmount.toFixed(2);
+    $("#loan_int4" + i).value = defaultInterestRate;
+    $("#loan_int4" + i).disabled = true;
+    $("#loan_int4" + i).style.backgroundColor = "gray";
+    $("#loan_int4" + i).style.color = "white";
+   loanWithInterest = (loanWithInterest + defaultLoanAmount) * (1 + defaultInterestRate);
+   $("#loan_bal4" + i).innerHTML = toComma(loanWithInterest.toFixed(2));
+    } // end: "for" loop
+		    
   //Amount column
 		    //$("#loan_amt0" * (10000 + 1.0453)) 
 		    //$("#loan_amt1" * (10453 + 1.0453)) 
