@@ -114,8 +114,7 @@
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
-		</body>
-</html>
+		
     <script>
       // --- global variables ---
 //first year of year end balence = loan amount * 1 + year end balence
@@ -163,19 +162,6 @@ var loans = [
     } // end: "for" loop
 		    
 	
-   for(var i=2; i<6; i++) {
-    $("#loan_year01" + i).value = defaultYear++;
-    $("#loan_year01" + i).disabled = true;
-    $("#loan_year01" + i).style.backgroundColor = "gray";
-    $("#loan_year01" + i).style.color = "white";
-    $("#loan_amt01" + i).value = defaultLoanAmount.toFixed(2);
-    $("#loan_int01" + i).value = defaultInterestRate;
-    $("#loan_int01" + i).disabled = true;
-    $("#loan_int01" + i).style.backgroundColor = "gray";
-    $("#loan_int01" + i).style.color = "white";
-   loanWithInterest = (loanWithInterest + defaultLoanAmount) * (1 + defaultInterestRate);
-   $("#loan_bal01" + i).innerHTML = toComma(loanWithInterest.toFixed(2));
-    } // end: "for" loop
 		    
   //Amount column
 		    //$("#loan_amt0" * (10000 + 1.0453)) 
@@ -245,4 +231,5 @@ function updateLoansArray() {
 }
 	
 </script>	
-  
+  </body>
+</html>
