@@ -164,11 +164,11 @@ var loans = [
 	
 		    
   //Amount column
-		    //$("#loan_amt0" * (10000 + 1.0453)) 
-		    //$("#loan_amt1" * (10453 + 1.0453)) 
-		    //$("#loan_amt2" * (21379.52 + 1.0453)) 
-		    //$("#loan_amt3" * (32801.01 + 1.0453)) 
-		    //$("#loan_amt4" * (44739.90 + 1.0453)) 
+		    //$("#loan_amt0" * (10000 + 1.0453)) = bal0
+		    //$("#loan_amt1" * (10453 + 1.0453)) = bal01
+		    //$("#loan_amt2" * (21379.52 + 1.0453)) = bal02
+		    //$("#loan_amt3" * (32801.01 + 1.0453)) = bal03
+		    //$("#loan_amt4" * (44739.90 + 1.0453)) = bal04
 		    
 		    /*for(var i = 2; i < 6; i++) {
 		    $(#"loan_amt0" + i).value = defaultLoanAmount.toFixed(2)++;
@@ -221,7 +221,9 @@ var loans = [
 function toComma(value) {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-
+	    //regular expression for year: (\[0-9]{4})
+	    //regular expression for amount: (\[0-9]{5}\.[0-9]{2})
+            //regular expression for int rate: (\
 function updateLoansArray() {
   loans[0].loan_year = parseInt($("#loan_year01").val());
   for(var i=1; i<5; i++) {
