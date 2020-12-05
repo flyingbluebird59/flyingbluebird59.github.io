@@ -164,34 +164,12 @@ var loans = [
 	
 		    
   //Amount Column
-		for(var i=2; i<6; i++) {
-    $("#loan_amt0" + i).value = defaultLoanAmount++;
-    $("#loan_amt0" + i).disabled = true;
-    $("#loan_amt0" + i).style.backgroundColor = "gray";
-    $("#loan_amt0" + i).style.color = "white";
-    $("#loan_amt0" + i).value = defaultLoanAmount.toFixed(2);
-    $("#loan_int0" + i).value = defaultInterestRate;
-    $("#loan_int0" + i).disabled = true;
-    $("#loan_int0" + i).style.backgroundColor = "gray";
-    $("#loan_int0" + i).style.color = "white";
-   loanWithInterest = (loanWithInterest + defaultLoanAmount) * (1 + defaultInterestRate);
-   $("#loan_bal0" + i).innerHTML = toComma(loanWithInterest.toFixed(2));
+		
+			 
     } // end: "for" loop    
 		    
 		    // Int Rate Column
-		    for(var i=2; i<6; i++) {
-    $("#loan_int0" + i).value = defaultInterestRate++;
-    $("#loan_int0" + i).disabled = true;
-    $("#loan_int0" + i).style.backgroundColor = "gray";
-    $("#loan_int0" + i).style.color = "white";
-    $("#loan_amt0" + i).value = defaultLoanAmount.toFixed(2);
-    $("#loan_int0" + i).value = defaultInterestRate;
-    $("#loan_int0" + i).disabled = true;
-    $("#loan_int0" + i).style.backgroundColor = "gray";
-    $("#loan_int0" + i).style.color = "white";
-   loanWithInterest = (loanWithInterest + defaultLoanAmount) * (1 + defaultInterestRate);
-   $("#loan_bal0" + i).innerHTML = toComma(loanWithInterest.toFixed(2));
-    } // end: "for" loop
+		  
 		    
   // all input fields: select contents on fucus
   $("input[type=text]").focus(function() {
