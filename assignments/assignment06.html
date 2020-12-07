@@ -152,13 +152,13 @@ var loans = [
      for(var i=2; i<6; i++) {
     $("#loan_year0" + i).value = defaultYear++;
     $("#loan_year0" + i).disabled = true;
-   // $("#loan_year0" + i).style.backgroundColor = "gray";
-    //$("#loan_year0" + i).style.color = "white";
+   $("#loan_year0" + i)[0].style.backgroundColor = "gray";
+    $("#loan_year0" + i)[0].style.color = "white";
     $("#loan_amt0" + i).value = defaultLoanAmount.toFixed(2);
     $("#loan_int0" + i).value = defaultInterestRate;
     $("#loan_int0" + i).disabled = true;
-    //$("#loan_int0" + i).style.backgroundColor = "gray";
-    //$("#loan_int0" + i).style.color = "white";
+    $("#loan_int0" + i)[0].style.backgroundColor = "gray";
+    $("#loan_int0" + i)[0].style.color = "white";
    loanWithInterest = (loanWithInterest + defaultLoanAmount) * (1 + defaultInterestRate);
    $("#loan_bal0" + i).innerHTML = toComma(loanWithInterest.toFixed(2));
     } // end: "for" loop
