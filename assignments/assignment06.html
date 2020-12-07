@@ -157,8 +157,8 @@ var loans = [
     $("#loan_amt0" + i).value = defaultLoanAmount.toFixed(2);
     $("#loan_int0" + i).value = defaultInterestRate;
     $("#loan_int0" + i).disabled = true;
-    $("#loan_int0" + i).style.backgroundColor = "gray";
-    $("#loan_int0" + i).style.color = "white";
+    //$("#loan_int0" + i).style.backgroundColor = "gray";
+    //$("#loan_int0" + i).style.color = "white";
    loanWithInterest = (loanWithInterest + defaultLoanAmount) * (1 + defaultInterestRate);
    $("#loan_bal0" + i).innerHTML = toComma(loanWithInterest.toFixed(2));
     } // end: "for" loop
