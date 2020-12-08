@@ -20,6 +20,7 @@
 	<body onload="">
 
 		<div class="container">
+<div ng-app="myApp" ng-controller="myCtrl">
 
 			<form>
 
@@ -76,7 +77,9 @@
 								</tr>
 							</table>
 							<br />
-							<button type="button" class="btn btn-primary" onclick="processForm();">Re-calculate</button> 
+							<button type="button" class="btn btn-primary" ng-click="populate();">Re-calculate</button> 
+							onclick="saveForm();">Save</button>
+						onclick="loadForm();">Load</button>
 						</div>
 					</div>
 
@@ -92,6 +95,11 @@
 									<th>Int Amt</th>
 									<th>YE Bal</th>
 								</tr>
+								<tr ng-repeat="x in payments">
+									<td>{{ x.year }}</td>
+										<td>{{ x.payment }}</td>
+										<td>{{ x.amt }}</td>
+										<td>{{ x.ye }}</td>
 								<tr>
 									<td><span id="pmt_year01">2025</span></td>
 									<td><span id="pmt_amt01">$6,500.00</span></td>
