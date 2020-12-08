@@ -128,6 +128,9 @@ var loans = [
   { loan_year: 2023, loan_amount: 10000.00, loan_int_rate: 0.0453 },
   { loan_year: 2024, loan_amount: 10000.00, loan_int_rate: 0.0453 }
 ]; 
+let loanWithInterest = 0;
+let int = 0;
+let payments;
 
 // --- function: loadDoc() ---
 
@@ -185,19 +188,27 @@ var loans = [
   
 //} // end: function loadDoc()
 	    });
-
 function toComma(value) {
-    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-	   
-function updateLoansArray() {
-  loans[0].loan_year = parseInt($("#loan_year01").val());
-  for(var i=1; i<5; i++) {
-    loans[i].loan_year = loans[0].loan_year + i;
-    $("#loan_year0"+ (i+1) ).val(loans[i].loan_year);
+let toMoney = (value) => {
+  return `\$${toComma(value.toFixed(2))}`; 
+}
+let saveForm = () => {
+  localStorage.setItem(`as06`, JSON.stringify(loans));
+}
+let loadForm = () => {
+  if(localStorage.getItem(`as06`) != null){
+     loans = JSON.parse(localStorage.getItem(`as06`));
+     updateForm();
+  } else {
+     alert(`Error: no saved values`);
   }
 }
-	    let yearP = /^(19|20)\d{2}$/;
+function updateLoansArray() {
+  
+  // regex tester web site: https://www.regexpal.com/
+  let yearP = /^(19|20)\d{2}$/;
   let amtP = /^([1-9][0-9]*)+(.[0-9]{1,2})?$/;
   let intP = /^(0|)+(.[0-9]{1,5})?$/;
 
@@ -216,7 +227,8 @@ function updateLoansArray() {
     valid = false;
     $(`#loan_int01`).css("background-color", "red");
   }
-	    if(valid) {
+
+  if(valid) {
     loans[0].loan_year = parseInt($("#loan_year01").val());
     for(var i=1; i<5; i++) {
       loans[i].loan_year = loans[0].loan_year + i;
@@ -235,10 +247,12 @@ function updateLoansArray() {
   } // end: if
   
 } // end: function updateLoansArray()
+
+// -------------------------------------------------------
 let updateForm = () => {
   loanWithInterest = 0;
   let totalAmt = 0;
-	for(i = 1; i < 6; i++) {
+  for(i = 1; i < 6; i++) {
     $(`#loan_year0${i}`).val(loans[i - 1].loan_year);
     let amt = loans[i - 1].loan_amount;
     $(`#loan_amt0${i}`).val(amt);
@@ -255,8 +269,9 @@ let updateForm = () => {
 } // end: function updateForm()
   
 
-	//Angular code from codepen
-	    var app = angular.module('myApp', []);
+// ----- ANGULAR FROM CODEPEN -----
+
+var app = angular.module('myApp', []);
 
 app.controller('myCtrl', function($scope) {
   $scope.payments = [];
